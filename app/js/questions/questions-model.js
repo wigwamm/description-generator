@@ -23,7 +23,7 @@ angular.module('app').factory('QuestionsModel', function() {
 		},
 		{
 			'question' : 'Which floor is the property on?',
-			'answers'  : ['B', 'G', [1..40]],
+			'answers'  : ['B', 'G', '1..40'],
 			'slug'     : ''
 		},
 		{
@@ -90,7 +90,7 @@ angular.module('app').factory('QuestionsModel', function() {
 		},
 		{
 			'question' : 'Which floor is the property on?',
-			'answers'  : ['B', 'G', [1..40]],
+			'answers'  : ['B', 'G', '1..40'],
 			'slug'     : ''
 		},
 		{
