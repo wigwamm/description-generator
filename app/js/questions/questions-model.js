@@ -29,7 +29,7 @@ angular.module('app').factory('QuestionsModel', function() {
 			'slug'     : 'numberOfBathrooms'
 		},
 		{
-			'question' : 'How many big is the property?',
+			'question' : 'How big is the property?',
 			'answers'  : ['Small', 'Medium', 'Large'],
 			'slug'     : 'propertySize'
 		},
@@ -44,7 +44,7 @@ angular.module('app').factory('QuestionsModel', function() {
 			'slug'     : 'furnished'
 		},
 		{
-			'question' : 'Decor of the property',
+			'question' : 'What\'s the decor of the property',
 			'answers'  : ['Modern', 'Traditional', 'Plain'],
 			'slug'     : 'standardOfDecor'
 		},

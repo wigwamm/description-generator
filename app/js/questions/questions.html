@@ -9,7 +9,7 @@
 </div>
 
 <ul>
-	<li class="pc-panel pc-question" data-ng-repeat="question in questions" data-question-number="{{ $index + 1 }}">
+	<li class="pc-panel pc-question" data-ng-repeat="question in model.questions" data-question-number="{{ $index + 1 }}">
 		<h3>{{ question.question }}</h3>
 		<ul>
 			<li data-ng-repeat="answer in question.answers" class="pc-answer" data-answer="{{ $index + 1 }}"> {{ answer }}</li>
