@@ -1,5 +1,91 @@
 angular.module('app').factory('QuestionsModel', function() {
 	var questions = {};
+
+	// Questions from Proppycock -- use for the time being
+	questions.all = [
+		{
+			'question' : 'What type of property?',
+			'answers'  : [ 'Detached', 'Semi-detached', 'Terraced', 'Flat - Period conversion', 'Flat - block'],
+			'slug'     : 'propertyType'
+		},
+		{
+			'question' : 'Which floor is the property on?',
+			'answers'  : ['B', 'G', '1..40'],
+			'slug'     : ''
+		},
+		{
+			'question' : 'Is there a lift?',
+			'answers'  : ['Yes', 'No'],
+			'slug'     : 'lift'
+		},
+		{
+			'question' : 'How many bedrooms?',
+			'answers'  : ['Studio', '1', '2', '3', '4', '5', '6', '7'],
+			'slug'     : 'numberOfBedrooms'
+		},
+		{
+			'question' : 'How many bathrooms?',
+			'answers'  : ['1', '2', '3'],
+			'slug'     : 'numberOfBathrooms'
+		},
+		{
+			'question' : 'How many big is the property?',
+			'answers'  : ['Small', 'Medium', 'Large'],
+			'slug'     : 'propertySize'
+		},
+		{
+			'question' : 'Does the property have a garden?',
+			'answers'  : ['Yes', 'No', 'Balcony', 'Patio'],
+			'slug'     : 'garden'
+		},
+		{
+			'question' : 'Does it come furnished?',
+			'answers'  : ['Furnished', 'Part-furnished', 'Unfurnished'],
+			'slug'     : 'furnished'
+		},
+		{
+			'question' : 'Decor of the property',
+			'answers'  : ['Modern', 'Traditional', 'Plain'],
+			'slug'     : 'standardOfDecor'
+		},
+		{
+			'question' : 'What is the property\'s standard of finish?',
+			'answers'  : ['Luxury', 'Good', 'Average'],
+			'slug'     : 'standardOfFinish'
+		},
+		{
+			'question' : 'When was the property last decorated?',
+			'answers'  : ['This year', '%lastYear', '%twoYearsAgo', '%threeYearsAgo or earlier'],
+			'slug'     : 'decoratedYear'
+		},
+		{
+			'question' : 'When is the property available from?',
+			'answers'  : ['Now', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+			'slug'     : 'availableFrom'
+		},
+		{
+			'question' : 'How far it is from the station?',
+			'answers'  : ['Walking', 'Bus (> 10 minute walk)'],
+			'slug'     : 'distanceFromStation'
+		},
+		{
+			'question' : 'Is there parking?',
+			'answers'  : ['None', 'On-street', 'Drive', 'Single Garage', 'Double Garage'],
+			'slug'     : 'parking'
+		},
+		{
+			'question' : 'Would you accept pets?',
+			'answers'  : ['Yes', 'Caged pets only', 'No'],
+			'slug'     : 'petsAllowed'
+		},
+		{
+			'question' : 'Would you accept DSS tenants?',
+			'answers'  : ['Yes', 'Considered', 'No'],
+			'slug'     : 'DSS'
+		},
+	];
+
+	// Questions for Sales & Lettings for Listing App
 	questions.sales = [
 		{
 			'question' : 'What type of property?',
