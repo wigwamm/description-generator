@@ -1,4 +1,13 @@
-<div class="pc-panel">
+<style>
+	.is-active {
+		background:orange;
+	}
+</style>
+<div
+	class="pc-panel"
+	data-ng-class="activeClass(question)"
+	data-ng-click="makeActive(question)">
+
     <h2 class="pc-main-title">Proppycock</h2>
 	<p class="pc-intro">
 		<b>Property descriptions</b> are a load of <strong>poppycock</strong>.
@@ -9,22 +18,53 @@
 </div>
 
 <ul>
-	<li class="pc-panel pc-question" data-ng-repeat="question in model.questions" data-question-number="{{ $index }}">
-		<h3>{{ question.question }}</h3>
-		<ul>
-			<li data-ng-repeat="answer in question.answers" class="pc-answer" data-answer="{{ $index }}">
-				{{ answer }}
-			</li>
-		</ul>
-		<ul>
-			<li class="pc-pannel pc-question pc-sub-question" data-ng-repeat="subQuestion in question.subQuestions" data-sub-question-number="{{ $index }}">
-				<h3>{{ subQuestion.question }}</h3>
-				<ul>
-					<li class="pc-answer" data-ng-repeat="answer in subQuestion.answers" data-sub-question-answer="{{ $index }}">
+	<li class="pc-question"
+		data-ng-repeat="question in model.questions"
+		data-question-number="{{ $index }}">
+
+		<div
+			class="pc-panel"
+			data-ng-class="activeClass(question)"
+			data-ng-click="makeActive(question)">
+
+			<h3>{{ question.question }}</h3>
+
+			<ul>
+				<li
+					class="pc-answer"
+					data-ng-repeat="answer in question.answers"
+					data-answer="{{ $index }}">
 						{{ answer }}
-					</li>
-				</ul>
-			</li>
-		</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="pc-sub-questions">
+
+			<ul>
+				<li
+					class="pc-question pc-sub-question"
+					data-ng-repeat="subQuestion in question.subQuestions"
+					data-sub-question-number="{{ $index }}">
+
+					<div
+						class="pc-panel"
+						data-ng-class="activeClass(subQuestion)"
+						data-ng-click="makeActive(subQuestion)">
+
+						<h3>{{ subQuestion.question }}</h3>
+						<ul>
+							<li
+								class="pc-answer"
+								data-ng-repeat="answer in subQuestion.answers"
+								data-sub-question-answer="{{ $index }}">
+									{{ answer }}
+							</li>
+						</ul>
+
+					</div>
+				</li>
+			</ul>
+		</div>
+
 	</li>
 </ul>
