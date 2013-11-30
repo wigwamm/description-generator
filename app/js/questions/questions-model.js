@@ -4,9 +4,37 @@ angular.module('app').factory('QuestionsModel', function() {
 	// Questions from Proppycock -- use for the time being
 	questions.all = [
 		{
-			'question' : 'What type of property?',
-			'answers'  : [ 'Detached', 'Semi-detached', 'Terraced', 'Flat - Period conversion', 'Flat - block'],
-			'slug'     : 'propertyType'
+			'question'     : 'What type of property?',
+			'answers'      : ['House', 'Flat', 'Maisonette', 'Studio', 'Bungalow'],
+			'slug'         : 'propertyType',
+			'hasSub'       : true,
+			'subQuestions' : [
+				{
+					'question' : 'What type of house?',
+					'answers'  : ['Detached', 'Semi-detached', 'Townhouse', 'Terraced'],
+					'slug'     : 'houseType'
+				},
+				{
+					'question' : 'What floor is the flat on?',
+					'answers'  : ['Top', 'Inbetween', 'Ground'],
+					'slug'     : 'flatFloor'
+				},
+				{
+					'question' : 'What floor is the maisonette?',
+					'answers'  : ['Top', 'Ground'],
+					'slug'     : 'maisonetteFloor'
+				},
+				{
+					'question' : 'What type of house?',
+					'answers'  : ['Detached', 'Semi-detached', 'Townhouse', 'Terraced'],
+					'slug'     : 'houseType'
+				},
+				{
+					'question' : 'What type of studio is it?',
+					'answers'  : ['Self-contained', 'Flat'],
+					'slug'     : 'studioType'
+				}
+			]
 		},
 		{
 			'question' : 'Which floor is the property on?',

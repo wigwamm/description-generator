@@ -1,18 +1,30 @@
 <div class="pc-panel">
     <h2 class="pc-main-title">Proppycock</h2>
 	<p class="pc-intro">
-		<b>Property descriptions are a load of <b>poppycock</strong>.
-		Poke fun and create a Proppycock description for your property
+		<b>Property descriptions</b> are a load of <strong>poppycock</strong>.
+		Poke fun and create a <em>Proppycock</em> description for your property
 		and share with the world.
 	</p>
 	<a class="pc-button">Begin &gt;</a>
 </div>
 
 <ul>
-	<li class="pc-panel pc-question" data-ng-repeat="question in model.questions" data-question-number="{{ $index + 1 }}">
+	<li class="pc-panel pc-question" data-ng-repeat="question in model.questions" data-question-number="{{ $index }}">
 		<h3>{{ question.question }}</h3>
 		<ul>
-			<li data-ng-repeat="answer in question.answers" class="pc-answer" data-answer="{{ $index + 1 }}"> {{ answer }}</li>
+			<li data-ng-repeat="answer in question.answers" class="pc-answer" data-answer="{{ $index }}">
+				{{ answer }}
+			</li>
+		</ul>
+		<ul>
+			<li class="pc-pannel pc-question pc-sub-question" data-ng-repeat="subQuestion in question.subQuestions" data-sub-question-number="{{ $index }}">
+				<h3>{{ subQuestion.question }}</h3>
+				<ul>
+					<li class="pc-answer" data-ng-repeat="answer in subQuestion.answers" data-sub-question-answer="{{ $index }}">
+						{{ answer }}
+					</li>
+				</ul>
+			</li>
 		</ul>
 	</li>
 </ul>
