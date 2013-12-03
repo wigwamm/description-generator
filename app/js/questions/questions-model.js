@@ -25,26 +25,11 @@ angular.module('app').factory('QuestionsModel', function() {
 					'slug'     : 'maisonetteFloor'
 				},
 				{
-					'question' : 'What type of house?',
-					'answers'  : ['Detached', 'Semi-detached', 'Townhouse', 'Terraced'],
-					'slug'     : 'houseType'
-				},
-				{
 					'question' : 'What type of studio is it?',
 					'answers'  : ['Self-contained', 'Flat'],
 					'slug'     : 'studioType'
 				}
 			]
-		},
-		{
-			'question' : 'Which floor is the property on?',
-			'answers'  : ['B', 'G', '1..40'],
-			'slug'     : 'floor'
-		},
-		{
-			'question' : 'Is there a lift?',
-			'answers'  : ['Yes', 'No'],
-			'slug'     : 'lift'
 		},
 		{
 			'question' : 'How many bedrooms?',

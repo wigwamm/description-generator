@@ -1,6 +1,7 @@
 angular.module('app').directive('recordAnswer', function() {
 	return {
 		link: function(scope, element, attrs){
+
 			element.bind('click', function(){
 				var answer = scope.answer;
 				var slug;
@@ -13,10 +14,8 @@ angular.module('app').directive('recordAnswer', function() {
 				}
 
 				scope.answers[slug] = answer;
-				scope.$apply();
 				console.log(scope.answers);
-
-				scope.advanceToNextQuestion();
+				scope.$apply();
 			});
 		}
 	};

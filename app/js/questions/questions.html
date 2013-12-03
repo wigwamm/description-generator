@@ -5,8 +5,7 @@
 </style>
 <div
 	class="pc-panel"
-	data-ng-class="activeClass(question)"
-	data-ng-click="makeActive(question)">
+	data-ng-class="activeClass(question)">
 
     <h2 class="pc-main-title">Proppycock</h2>
 	<p class="pc-intro">
@@ -18,14 +17,9 @@
 </div>
 
 <ul>
-	<li class="pc-question"
-		data-ng-repeat="question in model.questions"
-		data-question-number="{{ $index }}">
+	<li class="pc-question" data-ng-repeat="question in model.questions">
 
-		<div
-			class="pc-panel"
-			data-ng-class="activeClass(question)"
-			data-ng-click="makeActive(question)">
+		<div class="pc-panel" data-ng-class="activeClass(question)">
 
 			<h3>{{ question.question }}</h3>
 
@@ -33,6 +27,7 @@
 				<li
 					class="pc-answer"
 					data-ng-repeat="answer in question.answers"
+					data-change-question
 					data-record-answer>
 						{{ answer }}
 				</li>
@@ -42,20 +37,16 @@
 		<div class="pc-sub-questions">
 
 			<ul>
-				<li
-					class="pc-question pc-sub-question"
-					data-ng-repeat="subQuestion in question.subQuestions">
+				<li class="pc-question pc-sub-question" data-ng-repeat="subQuestion in question.subQuestions">
 
-					<div
-						class="pc-panel"
-						data-ng-class="activeClass(subQuestion)"
-						data-ng-click="makeActive(subQuestion)">
+					<div class="pc-panel" data-ng-class="activeClass(subQuestion)">
 
 						<h3>{{ subQuestion.question }}</h3>
 						<ul>
 							<li
 								class="pc-answer"
 								data-ng-repeat="answer in subQuestion.answers"
+								data-change-question
 								data-record-answer>
 									{{ answer }}
 							</li>
