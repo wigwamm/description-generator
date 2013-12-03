@@ -3,10 +3,14 @@ angular.module('app').directive('changeQuestion', function() {
 		link: function(scope, element, attrs){
 
 			element.bind('click', function(){
-				var currentQuestionNumber = scope.currentQuestionNumber;
-				var nextQuestionNumber;
+				var nextQuestion, nextQuestionNumber;
+				var lastQuestion = scope.$parent.$index === (scope.model.questions.length - 1);
 				var noFurtherSubQuestion = scope.subQuestion || !scope.question.hasSub || scope.$index > scope.question.subQuestions.length - 1;
-				var nextQuestion;
+
+				if ( lastQuestion ) {
+					scope.postAnswers();
+					return;
+				}
 
 				if ( noFurtherSubQuestion ) {
 					nextQuestionNumber = scope.$parent.$index + 1;

@@ -22,4 +22,8 @@ angular.module('app').controller('QuestionsController', function($scope, $locati
 		$scope.changeQuestion($scope.model.questions[0], 0);
 	};
 
+	$scope.postAnswers = function(){
+		console.log('Posting answers');
+	};
+
 });
