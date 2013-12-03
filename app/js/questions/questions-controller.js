@@ -10,4 +10,10 @@ angular.module('app').controller('QuestionsController', function($scope, $locati
 		return item === $scope.active ? 'is-active' : undefined;
 	};
 
+	$scope.answers = {};
+	$scope.recordAnswers = function(key, value) {
+		$scope.answers[key] = value;
+		console.log($scope.answers);
+	};
+
 });

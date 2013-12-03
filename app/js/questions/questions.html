@@ -34,7 +34,13 @@
 					class="pc-answer"
 					data-ng-repeat="answer in question.answers"
 					data-answer="{{ $index }}">
-						{{ answer }}
+					<input
+						type="submit"
+						class="pc-button"
+						data-slug="{{ question.slug }}"
+						data-answer="{{ answer }}"
+						value="{{ answer }}"
+						data-ng-click="recordAnswers(question.slug, answer)">
 				</li>
 			</ul>
 		</div>
@@ -57,7 +63,13 @@
 								class="pc-answer"
 								data-ng-repeat="answer in subQuestion.answers"
 								data-sub-question-answer="{{ $index }}">
-									{{ answer }}
+								<input
+									type="submit"
+									class="pc-button"
+									data-slug="{{ subQuestion.slug }}"
+									data-answer="{{ answer }}"
+									value="{{ answer }}"
+									data-ng-click="recordAnswers(subQuestion.slug, answer)">
 							</li>
 						</ul>
 
