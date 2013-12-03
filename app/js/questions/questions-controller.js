@@ -18,4 +18,8 @@ angular.module('app').controller('QuestionsController', function($scope, $locati
 		$scope.currentQuestionNumber = questionNumber;
 	};
 
+	$scope.begin = function(){
+		$scope.changeQuestion($scope.model.questions[0], 0);
+	};
+
 });
