@@ -2,6 +2,7 @@ angular.module('app').controller('QuestionsController', function($scope, $locati
 
 	$scope.model = {};
 	$scope.model.questions = QuestionsModel.all;
+	$scope.answers = {};
 
 	$scope.makeActive = function(item) {
 		$scope.active = item;
@@ -10,10 +11,8 @@ angular.module('app').controller('QuestionsController', function($scope, $locati
 		return item === $scope.active ? 'is-active' : undefined;
 	};
 
-	$scope.answers = {};
-	$scope.recordAnswers = function(key, value) {
-		$scope.answers[key] = value;
-		console.log($scope.answers);
+	$scope.advanceToNextQuestion = function(){
 	};
+
 
 });
