@@ -1,5 +1,10 @@
 angular.module('app').factory('QuestionsModel', function() {
-	var questions = {};
+	var questions     = {};
+
+	var thisYear      = new Date().getFullYear();
+	var lastYear      = thisYear - 1;
+	var twoYearsAgo   = thisYear - 2;
+	var threeYearsAgo = thisYear - 3;
 
 	// Questions from Proppycock -- use for the time being
 	questions.all = [
@@ -68,7 +73,7 @@ angular.module('app').factory('QuestionsModel', function() {
 		},
 		{
 			'question' : 'When was the property last decorated?',
-			'answers'  : ['This year', '%lastYear', '%twoYearsAgo', '%threeYearsAgo or earlier'],
+			'answers'  : ['This year', lastYear, twoYearsAgo, threeYearsAgo + ' or earlier'],
 			'slug'     : 'decoratedYear'
 		},
 		{
@@ -119,11 +124,6 @@ angular.module('app').factory('QuestionsModel', function() {
 			'question' : 'What\'s the asking price?',
 			'answers'  : '',
 			'slug'     : 'price'
-		},
-		{
-			'question' : 'Which floor is the property on?',
-			'answers'  : ['B', 'G', '1..40'],
-			'slug'     : ''
 		},
 		{
 			'question' : 'Is there a lift?',
