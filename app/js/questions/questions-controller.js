@@ -1,9 +1,10 @@
-angular.module('app').controller('QuestionsController', function($scope, $location, QuestionsModel) {
+angular.module('app').controller('QuestionsController', function($scope, $location, QuestionsModel, BlabberService, DescriptionService) {
 
 	$scope.model = {};
 	$scope.model.questions = QuestionsModel.all;
 
 	$scope.answers = {};
+	$scope.description = DescriptionService;
 
 	$scope.makeActive = function(item) {
 		$scope.active = item;
@@ -22,7 +23,15 @@ angular.module('app').controller('QuestionsController', function($scope, $locati
 		$scope.changeQuestion($scope.model.questions[0], 0);
 	};
 
-	$scope.postAnswers = function(){
+	var onGenerateSuccess = function(response) {
+		$scope.description.descriptionBody = response[0].description;
+		$location.path('/description');
+	};
+
+	$scope.postAnswers = function() {
+		BlabberService.generateDescription($scope.answers).success(function(data, status, headers, config){
+			onGenerateSuccess(data);
+		});
 		console.log('Posting answers');
 	};
 

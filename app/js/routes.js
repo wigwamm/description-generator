@@ -7,9 +7,9 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     controller: 'QuestionsController'
   });
 
-  $routeProvider.when('/descriptions', {
-    templateUrl: 'js/descriptions/descriptions.html',
-    controller: 'DescriptionsController'
+  $routeProvider.when('/description', {
+    templateUrl: 'js/description/description.html',
+    controller: 'DescriptionController'
   });
 
   $routeProvider.otherwise({ redirectTo: '/questions' });

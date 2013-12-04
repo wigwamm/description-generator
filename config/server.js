@@ -13,21 +13,15 @@
  */
 
 module.exports = {
-  drawRoutes: function(app) {
-    app.post('/login', function(req, res) {
-      res.json({ message: 'logging in!' });
-    });
 
-    app.post('/logout', function(req, res) {
-      res.json({ message: 'logging out!'});
-    });
+	drawRoutes: function(app) {
 
-    app.get('/books', function (req, res) {
-      res.json([
-        {title: 'Great Expectations', author: 'Dickens'},
-        {title: 'Foundation Series', author: 'Asimov'},
-        {title: 'Treasure Island', author: 'Stephenson'}
-      ]);
-    });
-  }
+		app.post('/blabber/generate', function(req, res) {
+			res.json([
+				{ description: 'Located within this modern and popular development, this gorgeous one bedroom penthouse flat is located walking distance from the ameneties of town. Comprising one bedroom, one bathroom, a spectacular modern fitted kitchen with integrated appliances, reception room and garden. The property is available now and offered furnished' }
+			]);
+		});
+
+	}
+
 };
